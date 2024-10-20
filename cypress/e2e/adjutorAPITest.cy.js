@@ -591,7 +591,7 @@ describe('Adjutor API - Direct Debit', () => {
     it('Should return an error for unauthorized access when retrieving transactions', () => {
       cy.request({
         method: 'GET',
-        url: `${baseUrl}direct-debit/transactions?limit=10&page=1`,
+        url: `/direct-debit/transactions?limit=10&page=1`,
         headers: {
           Authorization: `Bearer ${invalidApiKey}`, // Invalid API key
         },
