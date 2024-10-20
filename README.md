@@ -2,11 +2,12 @@
 
 This project focuses on developing automated API tests using Cypress.io. For additional details about Cypress, visit [Cypress.io](https://www.cypress.io).
 
+---
 ## Prerequisites
 
 - **Node.js:** Ensure you have the latest version installed. You can download it from [Node.js](https://nodejs.org/).
 - **IDE:** It is recommended to use Visual Studio Code as your Integrated Development Environment (IDE) for this project.
-
+---
 ## Setup Instructions
 
 1. **Clone this repository** using your preferred command line tool.
@@ -22,7 +23,7 @@ This project focuses on developing automated API tests using Cypress.io. For add
    ```bash
    npm install
    npx cypress install
-   ```
+---  ```
 ## Running the Tests with Headed Mode
 1. Open the Cypress dashboard with following command:
    ```bash
@@ -32,7 +33,7 @@ This project focuses on developing automated API tests using Cypress.io. For add
 3. The default browser will be Chrome. It is not necessary to choose a different browser; simply click on Start E2E Testing in Chrome.
 4. A new browser window will open with the test dashboard. Locate and click on the `adjutorAPITest.cy.js` file to run the tests.
 5. You can monitor the execution results by clicking on the steps listed on the left side of the dashboard to check which tests passed or failed.
-
+---
 ## Running the Tests with Headless Mode
 1. Run test with headless mode and generate Mochawesome report using the following command:
 
@@ -44,13 +45,14 @@ This project focuses on developing automated API tests using Cypress.io. For add
    ```bash
    start cypress\\reports\\mochawesome.html
    ```
+---
 ## Test Details
 ### Overview
 This automation assessment focuses on validating various API operations including BVN consent initialization, credit bureau retrieval, decision models, loan products, and payment initialization.
 - **Reference Types:** The directive `/// <reference types="cypress" />` at the top of the file ensures Cypress types are available for IntelliSense and type checking.
 - **Describe Block:** The describe block organizes all tests related to different API functionalities into context.
 - **Variables:** `apiKey`, `bvn`, `contact`, and `paymentData` are used to store API key and other necessary data for requests.
-
+---
 ## Test Scenarios
 
 ### Adjutor API – Validation
@@ -211,73 +213,74 @@ This automation assessment focuses on validating various API operations includin
 ### Adjutor API – Validation
 
 #### Initialize BVN Consent:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
 #### Complete Consent and Get BVN Details:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
 ### Adjutor API - Credit Bureaus
 
 #### CRC Credit Bureau:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
 #### FirstCentral Credit Bureau:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
 ### Adjutor API - Decision
 
 #### Fetch All Decision Models:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 #### Fetch Decision Model Details:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 ### Adjutor API - Embedded Loans and Payments
 
 #### Loan Products - Retrieve Loan Products:
-**Positive Case**: FAILED
-**Negative Case**: PASSED
+-**Positive Case**: FAILED
+-**Negative Case**: PASSED
 
 #### Payments - Initialize Payment:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 ### Adjutor API - Data For Lenders
 
 #### Retrieve Data Options:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 #### Retrieve Users:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 ### Adjutor API – Operational Services
 
 #### Get Adjutor Services Pricing:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 #### Get Wallet:
-**Positive Case**: PASSED
-**Negative Case**: PASSED
+-**Positive Case**: PASSED
+-**Negative Case**: PASSED
 
 ### Adjutor API - Direct Debit
 
 #### Get All Transactions:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
 #### Get Transactions Statistics:
-**Positive Case**: FAILED
-**Negative Case**: FAILED
+-**Positive Case**: FAILED
+-**Negative Case**: FAILED
 
+---
 ## Best Practices
 - **Separation of Concerns:** Ensures that each test case focuses on a specific operation, enhancing readability and maintainability.
 - **Response Validation:** Ensures that each API response is verified for correct status codes and data consistency.
