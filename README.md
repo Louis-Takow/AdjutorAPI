@@ -25,9 +25,9 @@ This project focuses on developing automated API tests using Cypress.io. For add
    ```
 ## Running the Tests with Headed Mode
 1. Open the Cypress dashboard with following command:
-  ```bash
+   ```bash
    npx cypress open
-  ```
+   ```
 2. On the Cypress dashboard, you will be greeted with options for E2E Testing and Component Testing. Since we are focusing on API automation, select E2E Testing.
 3. The default browser will be Chrome. It is not necessary to choose a different browser; simply click on Start E2E Testing in Chrome.
 4. A new browser window will open with the test dashboard. Locate and click on the `adjutorAPITest.cy.js` file to run the tests.
