@@ -56,44 +56,227 @@ This automation assessment focuses on validating various API operations includin
 ### Adjutor API – Validation
 
 #### Initialize BVN Consent:
-- Sends a POST request to initialize BVN consent.
-- Confirms that the response status is 200.
-- Logs the response message and validates the returned data.
+- **Positive Case**: 
+  - Sends a POST request to initialize BVN consent.
+  - Confirms the response status is 200.
+  - Validates the response message and data.
+- **Negative Case**: 
+  - Sends a POST request with an incorrect BVN or contact number.
+  - Confirms the response status is 400.
+  - Validates the error message indicating a mismatch.
 
 #### Complete Consent and Get BVN Details:
-- Sends a PUT request to complete BVN verification with the correct OTP.
-- Confirms that the response status is 200.
-- Validates the response message.
+- **Positive Case**: 
+  - Sends a PUT request to complete BVN verification with the correct OTP.
+  - Confirms the response status is 200.
+  - Validates the response message.
+- **Negative Case**: 
+  - Sends a PUT request with an incorrect OTP.
+  - Confirms the response status is 400.
+  - Validates the error message for invalid OTP.
 
 ### Adjutor API - Credit Bureaus
 
 #### CRC Credit Bureau:
-- Sends a GET request to retrieve the CRC credit report for a valid BVN.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a GET request to retrieve the CRC credit report for a valid BVN.
+  - Confirms the response status is 200.
+  - Validates the response message.
+- **Negative Case**: 
+  - Sends a GET request with an invalid BVN.
+  - Confirms the response status is 400.
+  - Validates the error message for invalid BVN.
 
 #### FirstCentral Credit Bureau:
-- Sends a GET request to retrieve the FirstCentral credit report for a valid BVN.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a GET request to retrieve the FirstCentral credit report for a valid BVN.
+  - Confirms the response status is 200.
+  - Validates the response message.
+- **Negative Case**: 
+  - Sends a GET request with an invalid BVN.
+  - Confirms the response status is 400.
+  - Validates the error message for invalid BVN.
 
 ### Adjutor API - Decision
 
 #### Fetch All Decision Models:
-- Sends a GET request to retrieve all decision models.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a GET request to retrieve all decision models.
+  - Confirms the response status is 200.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message for unauthorized access.
 
 #### Fetch Decision Model Details:
-- Sends a GET request to retrieve details of a valid decision model.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a GET request to retrieve details for a valid decision model.
+  - Confirms the response status is 200.
+- **Negative Case**: 
+  - Sends a GET request with an invalid decision model ID.
+  - Confirms the response status is 404.
+  - Validates the error message for a non-existent decision model.
 
 ### Adjutor API - Embedded Loans and Payments
 
 #### Loan Products - Retrieve Loan Products:
-- Sends a GET request to retrieve all loan products.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a GET request to retrieve all loan products.
+  - Confirms the response status is 200.
+  - Validates the response message and data.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message for unauthorized access.
 
 #### Payments - Initialize Payment:
-- Sends a POST request to initialize a payment.
-- Confirms that the response status is 200.
+- **Positive Case**: 
+  - Sends a POST request to initialize a payment.
+  - Confirms the response status is 200.
+  - Validates the response message.
+- **Negative Cases**: 
+  - Sends a POST request with missing required fields.
+  - Confirms the response status is 400.
+  - Validates the error message for the missing field.
+
+### Adjutor API - Data For Lenders
+
+#### Retrieve Data Options:
+- **Positive Case**: 
+  - Sends a GET request to retrieve data options.
+  - Confirms the response status is 200.
+  - Validates the response has a `success` property set to `true` and `data` is an array.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message indicating unauthorized access.
+
+#### Retrieve Users:
+- **Positive Case**: 
+  - Sends a GET request to retrieve user details.
+  - Confirms the response status is 200.
+  - Validates the response has a `success` property set to `true` and `data` is an array.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message indicating unauthorized access.
+
+### Adjutor API – Operational Services
+
+#### Get Adjutor Services Pricing:
+- **Positive Case**: 
+  - Sends a GET request to retrieve Adjutor services pricing.
+  - Confirms the response status is 200.
+  - Validates the response has a `status` property set to `success`, a `message` of `Successful`, and `data` is an array.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message indicating unauthorized access.
+
+#### Get Wallet:
+- **Positive Case**: 
+  - Sends a GET request to retrieve wallet information.
+  - Confirms the response status is 200.
+  - Validates the response has a `status` property set to `success`, a `message` of `Successful`, and checks the wallet balance.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 403.
+  - Validates the error message indicating unauthorized access.
+
+### Adjutor API - Direct Debit
+
+#### Get All Transactions:
+- **Positive Case**: 
+  - Sends a GET request to retrieve all transactions.
+  - Confirms the response status is 200.
+  - Validates the response has a `status` property set to `success`, a `message` of `success`, and `data` is an object containing an array of transactions.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 401.
+  - Validates the error message indicating unauthorized access.
+
+#### Get Transactions Statistics:
+- **Positive Case**: 
+  - Sends a GET request to retrieve transaction statistics.
+  - Confirms the response status is 200.
+  - Validates the response has a `status` property set to `success`, a `message` of `success`, and `data` includes an array of transactions.
+- **Negative Case**: 
+  - Sends a GET request with an invalid API key.
+  - Confirms the response status is 401.
+  - Validates the error message indicating unauthorized access.
+
+---
+## Summary of Test Results
+
+### Adjutor API – Validation
+
+#### Initialize BVN Consent:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
+
+#### Complete Consent and Get BVN Details:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
+
+### Adjutor API - Credit Bureaus
+
+#### CRC Credit Bureau:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
+
+#### FirstCentral Credit Bureau:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
+
+### Adjutor API - Decision
+
+#### Fetch All Decision Models:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+#### Fetch Decision Model Details:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+### Adjutor API - Embedded Loans and Payments
+
+#### Loan Products - Retrieve Loan Products:
+**Positive Case**: FAILED
+**Negative Case**: PASSED
+
+#### Payments - Initialize Payment:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+### Adjutor API - Data For Lenders
+
+#### Retrieve Data Options:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+#### Retrieve Users:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+### Adjutor API – Operational Services
+
+#### Get Adjutor Services Pricing:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+#### Get Wallet:
+**Positive Case**: PASSED
+**Negative Case**: PASSED
+
+### Adjutor API - Direct Debit
+
+#### Get All Transactions:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
+
+#### Get Transactions Statistics:
+**Positive Case**: FAILED
+**Negative Case**: FAILED
 
 ## Best Practices
 - **Separation of Concerns:** Ensures that each test case focuses on a specific operation, enhancing readability and maintainability.

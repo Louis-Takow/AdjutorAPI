@@ -5,9 +5,9 @@
     "passes": 16,
     "pending": 0,
     "failures": 13,
-    "start": "2024-10-20T09:59:32.720Z",
-    "end": "2024-10-20T10:00:11.885Z",
-    "duration": 39165,
+    "start": "2024-10-20T10:25:15.500Z",
+    "end": "2024-10-20T10:25:44.222Z",
+    "duration": 28722,
     "testsRegistered": 29,
     "passPercent": 55.172413793103445,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f6c3b3ef-ea3d-4463-b79f-d400d0bae187",
+      "uuid": "dd8a7b68-930e-49e1-a80b-11e8c39f5f32",
       "title": "",
       "fullFile": "cypress\\e2e\\adjutorAPITest.cy.js",
       "file": "cypress\\e2e\\adjutorAPITest.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "787f0cb1-4077-4132-944b-9da1583e578a",
+          "uuid": "6bc626a7-e1c0-4dbc-9800-c888299e964d",
           "title": "Adjutor API – Validation",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "f92b7832-1d36-42fc-8d47-13ee0c5b24a6",
+              "uuid": "0571d446-02bb-41fc-b66b-5f5813c53f7a",
               "title": "Initialize BVN Consent",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Should successfully initialize BVN consent and return OTP status",
                   "fullTitle": "Adjutor API – Validation Initialize BVN Consent Should successfully initialize BVN consent and return OTP status",
                   "timedOut": null,
-                  "duration": 2876,
+                  "duration": 1652,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -56,12 +56,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'POST',\n  url: `/verification/bvn/${bvn}`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  },\n  body: {\n    contact: contact\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response message\n  expect(response.body.status).to.eq('otp');\n  expect(response.body.message).to.eq('Please provide OTP sent to contact');\n  expect(response.body.data).to.eq('08012345678');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22222222222\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22222222222\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 25\n}\nBody: {\"contact\":\"08012345678\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:36 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e8618cbd-a386-4a51-88b5-c2b1f0b64e6f\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:36 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5827f43b807745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22222222222\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22222222222\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 25\n}\nBody: {\"contact\":\"08012345678\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:36 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e8618cbd-a386-4a51-88b5-c2b1f0b64e6f\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:36 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5827f43b807745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:10:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22222222222\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22222222222\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 25\n}\nBody: {\"contact\":\"08012345678\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:18 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"7b37f311-a79d-4f50-bb20-154eb615ccdf\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:18 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584d989b0796f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22222222222\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22222222222\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 25\n}\nBody: {\"contact\":\"08012345678\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:18 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"7b37f311-a79d-4f50-bb20-154eb615ccdf\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:18 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584d989b0796f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:10:9)",
                     "diff": null
                   },
-                  "uuid": "0aacfaee-ec96-48b7-ae30-215559b08675",
-                  "parentUUID": "f92b7832-1d36-42fc-8d47-13ee0c5b24a6",
+                  "uuid": "0ff33506-f35b-41d2-9788-5c15c6f4a649",
+                  "parentUUID": "0571d446-02bb-41fc-b66b-5f5813c53f7a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -69,7 +69,7 @@
                   "title": "Should return an error when incorrect BVN or contact number is provided",
                   "fullTitle": "Adjutor API – Validation Initialize BVN Consent Should return an error when incorrect BVN or contact number is provided",
                   "timedOut": null,
-                  "duration": 1171,
+                  "duration": 740,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -82,8 +82,8 @@
                     "estack": "AssertionError: expected 500 to equal 400\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:48:35)",
                     "diff": "- 500\n+ 400\n"
                   },
-                  "uuid": "587a5c59-0a81-417b-aa9f-933ac43faef1",
-                  "parentUUID": "f92b7832-1d36-42fc-8d47-13ee0c5b24a6",
+                  "uuid": "2fc803ac-45a1-4dc7-b7de-ef4f6991da74",
+                  "parentUUID": "0571d446-02bb-41fc-b66b-5f5813c53f7a",
                   "isHook": false,
                   "skipped": false
                 }
@@ -91,18 +91,18 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "0aacfaee-ec96-48b7-ae30-215559b08675",
-                "587a5c59-0a81-417b-aa9f-933ac43faef1"
+                "0ff33506-f35b-41d2-9788-5c15c6f4a649",
+                "2fc803ac-45a1-4dc7-b7de-ef4f6991da74"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 4047,
+              "duration": 2392,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "03d12937-8c81-41e1-bdf3-0e6716799a1a",
+              "uuid": "d36d2104-f6bd-4601-920c-5fefcd6143c5",
               "title": "Complete Consent and Get BVN Details",
               "fullFile": "",
               "file": "",
@@ -113,7 +113,7 @@
                   "title": "Should successfully complete BVN verification and return BVN details",
                   "fullTitle": "Adjutor API – Validation Complete Consent and Get BVN Details Should successfully complete BVN verification and return BVN details",
                   "timedOut": null,
-                  "duration": 645,
+                  "duration": 625,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -122,12 +122,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'PUT',\n  url: `/verification/bvn/${bvn}`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  },\n  body: {\n    otp: correctOtp\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response message\n  expect(response.body.status).to.eq('success');\n  expect(response.body.message).to.eq('Successful');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22123456789\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22123456789\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 16\n}\nBody: {\"otp\":\"623553\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:39 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"ce72fe51-37ac-45af-8412-eb68f22d305b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:39 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828056cf27745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22123456789\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22123456789\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 16\n}\nBody: {\"otp\":\"623553\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:39 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"ce72fe51-37ac-45af-8412-eb68f22d305b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:39 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828056cf27745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:63:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22123456789\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22123456789\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 16\n}\nBody: {\"otp\":\"623553\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:20 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"9c663989-c9dd-412d-978b-33afd3e4a0bb\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:20 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584da5cec396f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/verification/bvn/22123456789\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://adjutor.lendsqr.com/v2/verification/bvn/22123456789\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 16\n}\nBody: {\"otp\":\"623553\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:20 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"102\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"9c663989-c9dd-412d-978b-33afd3e4a0bb\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:20 GMT\",\n  \"etag\": \"W/\\\"66-EV0mXyZ5GKD4ryrgbm/ID7iamJI\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584da5cec396f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The specified service does not exist.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:63:9)",
                     "diff": null
                   },
-                  "uuid": "d1065025-8317-4284-b007-6925f60ba6dc",
-                  "parentUUID": "03d12937-8c81-41e1-bdf3-0e6716799a1a",
+                  "uuid": "7abb16f1-d2c3-4ec5-804a-e7a28b984684",
+                  "parentUUID": "d36d2104-f6bd-4601-920c-5fefcd6143c5",
                   "isHook": false,
                   "skipped": false
                 },
@@ -135,7 +135,7 @@
                   "title": "Should return an error for incorrect OTP",
                   "fullTitle": "Adjutor API – Validation Complete Consent and Get BVN Details Should return an error for incorrect OTP",
                   "timedOut": null,
-                  "duration": 1072,
+                  "duration": 710,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -148,8 +148,8 @@
                     "estack": "AssertionError: expected 500 to equal 400\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:97:35)",
                     "diff": "- 500\n+ 400\n"
                   },
-                  "uuid": "cfb48a89-cb31-45f6-83de-b0abd2fec690",
-                  "parentUUID": "03d12937-8c81-41e1-bdf3-0e6716799a1a",
+                  "uuid": "a6c70f97-2f91-45fb-9878-8ddcb1452d5b",
+                  "parentUUID": "d36d2104-f6bd-4601-920c-5fefcd6143c5",
                   "isHook": false,
                   "skipped": false
                 }
@@ -157,12 +157,12 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "d1065025-8317-4284-b007-6925f60ba6dc",
-                "cfb48a89-cb31-45f6-83de-b0abd2fec690"
+                "7abb16f1-d2c3-4ec5-804a-e7a28b984684",
+                "a6c70f97-2f91-45fb-9878-8ddcb1452d5b"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 1717,
+              "duration": 1335,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -178,7 +178,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "c8ebbdf1-2b22-4792-b03d-05778a948bde",
+          "uuid": "64c3867c-a8c5-4265-bd59-027aec04d039",
           "title": "Adjutor API - Credit Bureaus",
           "fullFile": "",
           "file": "",
@@ -187,7 +187,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "f8b387e9-b845-4c3f-9c07-c63322ef9253",
+              "uuid": "4cf1b6ef-aa72-42e1-a613-ee6c326a23fc",
               "title": "CRC Credit Bureau",
               "fullFile": "",
               "file": "",
@@ -198,7 +198,7 @@
                   "title": "Should successfully retrieve CRC credit report for valid BVN",
                   "fullTitle": "Adjutor API - Credit Bureaus CRC Credit Bureau Should successfully retrieve CRC credit report for valid BVN",
                   "timedOut": null,
-                  "duration": 1904,
+                  "duration": 657,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -207,12 +207,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/creditbureaus/crc/${validBvn}`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response message\n  expect(response.body.status).to.eq('success');\n  expect(response.body.message).to.eq('Successful');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:41 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"128\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e0d8dc37-ac2c-400c-a4dd-0adeb18466d3\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:41 GMT\",\n  \"etag\": \"W/\\\"80-BULGF7yNijx3V8s2lDtHlF4MD8g\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828110fcc7745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"We could not find a matching price definition for your request.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:41 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"128\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e0d8dc37-ac2c-400c-a4dd-0adeb18466d3\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:41 GMT\",\n  \"etag\": \"W/\\\"80-BULGF7yNijx3V8s2lDtHlF4MD8g\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828110fcc7745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"We could not find a matching price definition for your request.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:115:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:21 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"128\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"842fe8d9-97f0-4fef-8ecc-ee5105b87c39\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:21 GMT\",\n  \"etag\": \"W/\\\"80-BULGF7yNijx3V8s2lDtHlF4MD8g\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584daf0b7796f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"We could not find a matching price definition for your request.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/creditbureaus/crc/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:21 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"128\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"842fe8d9-97f0-4fef-8ecc-ee5105b87c39\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:21 GMT\",\n  \"etag\": \"W/\\\"80-BULGF7yNijx3V8s2lDtHlF4MD8g\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584daf0b7796f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"We could not find a matching price definition for your request.\",\n  \"data\": null,\n  \"meta\": {\n    \"balance\": 10\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:115:9)",
                     "diff": null
                   },
-                  "uuid": "44427dfb-1043-4f21-a586-07c7945a26c8",
-                  "parentUUID": "f8b387e9-b845-4c3f-9c07-c63322ef9253",
+                  "uuid": "426e6c15-b984-4c2e-9b96-6aae4330066d",
+                  "parentUUID": "4cf1b6ef-aa72-42e1-a613-ee6c326a23fc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -220,7 +220,7 @@
                   "title": "Should return an error for invalid BVN when retrieving CRC credit report",
                   "fullTitle": "Adjutor API - Credit Bureaus CRC Credit Bureau Should return an error for invalid BVN when retrieving CRC credit report",
                   "timedOut": null,
-                  "duration": 784,
+                  "duration": 625,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -233,8 +233,8 @@
                     "estack": "AssertionError: expected 404 to equal 400\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:143:35)",
                     "diff": "- 404\n+ 400\n"
                   },
-                  "uuid": "c427cd01-252b-4c8e-bb69-29682ebaac2d",
-                  "parentUUID": "f8b387e9-b845-4c3f-9c07-c63322ef9253",
+                  "uuid": "d478e04b-ca1d-45b1-92f2-e0d18bb3c0d3",
+                  "parentUUID": "4cf1b6ef-aa72-42e1-a613-ee6c326a23fc",
                   "isHook": false,
                   "skipped": false
                 }
@@ -242,18 +242,18 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "44427dfb-1043-4f21-a586-07c7945a26c8",
-                "c427cd01-252b-4c8e-bb69-29682ebaac2d"
+                "426e6c15-b984-4c2e-9b96-6aae4330066d",
+                "d478e04b-ca1d-45b1-92f2-e0d18bb3c0d3"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2688,
+              "duration": 1282,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "88b04bae-ff0c-4336-b0e9-ba5eadc29b8a",
+              "uuid": "e1124074-0418-41bc-ac0d-e61bf622b4ab",
               "title": "FirstCentral Credit Bureau",
               "fullFile": "",
               "file": "",
@@ -264,7 +264,7 @@
                   "title": "Should successfully retrieve FirstCentral credit report for valid BVN",
                   "fullTitle": "Adjutor API - Credit Bureaus FirstCentral Credit Bureau Should successfully retrieve FirstCentral credit report for valid BVN",
                   "timedOut": null,
-                  "duration": 627,
+                  "duration": 584,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -273,12 +273,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/firstcentral/${validBvn}`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response message\n  expect(response.body.status).to.eq('success');\n  expect(response.body.message).to.eq('Successful');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/firstcentral/22293381111\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/firstcentral/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:43 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"6952f8fb-e75a-4729-8303-334e9de4acfc\",\n  \"etag\": \"W/\\\"96-Gp7mGEjMoruNzGoeWBGkj/9oqhc\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828231a437745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The requested URL - /v2/firstcentral/22293381111 and method - GET is not found. Please check the endpoint and try again\"\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/firstcentral/22293381111\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/firstcentral/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:43 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"6952f8fb-e75a-4729-8303-334e9de4acfc\",\n  \"etag\": \"W/\\\"96-Gp7mGEjMoruNzGoeWBGkj/9oqhc\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828231a437745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The requested URL - /v2/firstcentral/22293381111 and method - GET is not found. Please check the endpoint and try again\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:155:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/firstcentral/22293381111\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/firstcentral/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:23 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"0693fbfa-febd-4ba8-b981-6ad15e2b441e\",\n  \"etag\": \"W/\\\"96-Gp7mGEjMoruNzGoeWBGkj/9oqhc\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584db82f5296f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The requested URL - /v2/firstcentral/22293381111 and method - GET is not found. Please check the endpoint and try again\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/firstcentral/22293381111\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/firstcentral/22293381111\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:23 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"0693fbfa-febd-4ba8-b981-6ad15e2b441e\",\n  \"etag\": \"W/\\\"96-Gp7mGEjMoruNzGoeWBGkj/9oqhc\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584db82f5296f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"The requested URL - /v2/firstcentral/22293381111 and method - GET is not found. Please check the endpoint and try again\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:155:9)",
                     "diff": null
                   },
-                  "uuid": "4609c1fa-5a9b-45b2-a166-bfcfa8a86ec2",
-                  "parentUUID": "88b04bae-ff0c-4336-b0e9-ba5eadc29b8a",
+                  "uuid": "9adb93cf-34b6-4851-949d-00cdff2251ed",
+                  "parentUUID": "e1124074-0418-41bc-ac0d-e61bf622b4ab",
                   "isHook": false,
                   "skipped": false
                 },
@@ -286,7 +286,7 @@
                   "title": "Should return an error for invalid BVN when retrieving FirstCentral credit report",
                   "fullTitle": "Adjutor API - Credit Bureaus FirstCentral Credit Bureau Should return an error for invalid BVN when retrieving FirstCentral credit report",
                   "timedOut": null,
-                  "duration": 1181,
+                  "duration": 538,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -299,8 +299,8 @@
                     "estack": "AssertionError: expected 404 to equal 400\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:182:35)",
                     "diff": "- 404\n+ 400\n"
                   },
-                  "uuid": "ac152800-508f-435b-b2e3-290267786fe3",
-                  "parentUUID": "88b04bae-ff0c-4336-b0e9-ba5eadc29b8a",
+                  "uuid": "30b6bd17-8a36-41c1-9f4e-97f71c718343",
+                  "parentUUID": "e1124074-0418-41bc-ac0d-e61bf622b4ab",
                   "isHook": false,
                   "skipped": false
                 }
@@ -308,12 +308,12 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "4609c1fa-5a9b-45b2-a166-bfcfa8a86ec2",
-                "ac152800-508f-435b-b2e3-290267786fe3"
+                "9adb93cf-34b6-4851-949d-00cdff2251ed",
+                "30b6bd17-8a36-41c1-9f4e-97f71c718343"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 1808,
+              "duration": 1122,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -329,7 +329,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "c99433ac-505b-404d-b150-34359352269c",
+          "uuid": "799675d5-d1e3-41d5-8951-10d1dc80982c",
           "title": "Adjutor API - Decision",
           "fullFile": "",
           "file": "",
@@ -338,7 +338,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "2025d4f5-afa3-4498-b8e8-3889f3a684a1",
+              "uuid": "7d0ea1a9-5004-482c-a2d7-cc189f1a9a79",
               "title": "Fetch All Decision Models",
               "fullFile": "",
               "file": "",
@@ -349,7 +349,7 @@
                   "title": "Should successfully retrieve all decision models",
                   "fullTitle": "Adjutor API - Decision Fetch All Decision Models Should successfully retrieve all decision models",
                   "timedOut": null,
-                  "duration": 817,
+                  "duration": 493,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -358,8 +358,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: '/decisioning/models/',\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n});",
                   "err": {},
-                  "uuid": "f5461624-8a73-4a23-be47-a415f94d6020",
-                  "parentUUID": "2025d4f5-afa3-4498-b8e8-3889f3a684a1",
+                  "uuid": "caff9653-c6ac-4aaa-8b1e-153ba932b9ce",
+                  "parentUUID": "7d0ea1a9-5004-482c-a2d7-cc189f1a9a79",
                   "isHook": false,
                   "skipped": false
                 },
@@ -367,7 +367,7 @@
                   "title": "Should return an error for unauthorized access when retrieving decision models",
                   "fullTitle": "Adjutor API - Decision Fetch All Decision Models Should return an error for unauthorized access when retrieving decision models",
                   "timedOut": null,
-                  "duration": 547,
+                  "duration": 334,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -376,27 +376,27 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: '/decisioning/models/',\n  headers: {\n    Authorization: `Bearer invalid API key` // Example invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "b339070e-a39e-4195-912b-cb1ec9688d01",
-                  "parentUUID": "2025d4f5-afa3-4498-b8e8-3889f3a684a1",
+                  "uuid": "45532903-926d-4f5a-8223-20161c73efac",
+                  "parentUUID": "7d0ea1a9-5004-482c-a2d7-cc189f1a9a79",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f5461624-8a73-4a23-be47-a415f94d6020",
-                "b339070e-a39e-4195-912b-cb1ec9688d01"
+                "caff9653-c6ac-4aaa-8b1e-153ba932b9ce",
+                "45532903-926d-4f5a-8223-20161c73efac"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1364,
+              "duration": 827,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "78456f18-eed9-4a07-8996-be467c0951ef",
+              "uuid": "2774df28-4751-4f57-98c5-c32b67693536",
               "title": "Fetch Decision Model Details",
               "fullFile": "",
               "file": "",
@@ -407,7 +407,7 @@
                   "title": "Should successfully retrieve details for a valid decision model",
                   "fullTitle": "Adjutor API - Decision Fetch Decision Model Details Should successfully retrieve details for a valid decision model",
                   "timedOut": null,
-                  "duration": 816,
+                  "duration": 486,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -416,8 +416,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/decisioning/models/${validModelId}/settings`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n});",
                   "err": {},
-                  "uuid": "7804f732-fc70-4370-9d70-6877a5df009e",
-                  "parentUUID": "78456f18-eed9-4a07-8996-be467c0951ef",
+                  "uuid": "ce9c154d-9976-4d39-9929-88311ec55c2a",
+                  "parentUUID": "2774df28-4751-4f57-98c5-c32b67693536",
                   "isHook": false,
                   "skipped": false
                 },
@@ -425,7 +425,7 @@
                   "title": "Should return an error for invalid decision model ID",
                   "fullTitle": "Adjutor API - Decision Fetch Decision Model Details Should return an error for invalid decision model ID",
                   "timedOut": null,
-                  "duration": 605,
+                  "duration": 552,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -434,21 +434,21 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/decisioning/models/${invalidModelId}/settings`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 404 or other applicable error code\n  expect(response.status).to.eq(404);\n  // Validate the error message for an invalid decision model ID\n  expect(response.body.message).to.contain('Decision model not found');\n});",
                   "err": {},
-                  "uuid": "d03470c9-da2c-4c87-bb36-0a13d3e536fa",
-                  "parentUUID": "78456f18-eed9-4a07-8996-be467c0951ef",
+                  "uuid": "bdf9fe97-2d7d-424e-ac9d-137799cfe018",
+                  "parentUUID": "2774df28-4751-4f57-98c5-c32b67693536",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7804f732-fc70-4370-9d70-6877a5df009e",
-                "d03470c9-da2c-4c87-bb36-0a13d3e536fa"
+                "ce9c154d-9976-4d39-9929-88311ec55c2a",
+                "bdf9fe97-2d7d-424e-ac9d-137799cfe018"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1421,
+              "duration": 1038,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -464,7 +464,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "f807266e-e4fd-4aed-b556-5f80102e64c4",
+          "uuid": "60739952-4131-4bce-84b1-e4a47176f96f",
           "title": "Adjutor API - Embedded Loans and Payments",
           "fullFile": "",
           "file": "",
@@ -473,7 +473,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "4b3eb8a4-c328-4f47-bcfd-77dd3033a5e2",
+              "uuid": "c8968536-0637-4f53-bcd4-7c593eec4514",
               "title": "Loan Products - Retrieve Loan Products",
               "fullFile": "",
               "file": "",
@@ -484,7 +484,7 @@
                   "title": "Should successfully retrieve all loan products",
                   "fullTitle": "Adjutor API - Embedded Loans and Payments Loan Products - Retrieve Loan Products Should successfully retrieve all loan products",
                   "timedOut": null,
-                  "duration": 830,
+                  "duration": 663,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -493,12 +493,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/loans/products`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'Successful');\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.be.an('array');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/loans/products\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/loans/products\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:49 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"98\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"f2636504-17c2-4fcd-bfde-9f50f1446a3b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:48 GMT\",\n  \"etag\": \"W/\\\"62-lLTiE+UTkZi4k1srCWaTeQqinbs\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828425b067745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"This offer is not available, please make another request for a loan\"\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/loans/products\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/loans/products\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 09:59:49 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"98\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"f2636504-17c2-4fcd-bfde-9f50f1446a3b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 09:59:48 GMT\",\n  \"etag\": \"W/\\\"62-lLTiE+UTkZi4k1srCWaTeQqinbs\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828425b067745-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"This offer is not available, please make another request for a loan\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:277:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/loans/products\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/loans/products\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:26 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"98\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"3778a44e-3c4d-4d81-8e59-b201a3cdc158\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:26 GMT\",\n  \"etag\": \"W/\\\"62-lLTiE+UTkZi4k1srCWaTeQqinbs\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584dcd0cde96f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"This offer is not available, please make another request for a loan\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/loans/products\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/loans/products\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:26 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"98\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"3778a44e-3c4d-4d81-8e59-b201a3cdc158\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:26 GMT\",\n  \"etag\": \"W/\\\"62-lLTiE+UTkZi4k1srCWaTeQqinbs\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584dcd0cde96f9-AMS\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"This offer is not available, please make another request for a loan\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:277:9)",
                     "diff": null
                   },
-                  "uuid": "e8fc3b73-f3e9-423f-8725-e9b4d5b47396",
-                  "parentUUID": "4b3eb8a4-c328-4f47-bcfd-77dd3033a5e2",
+                  "uuid": "58969502-6f0d-47e4-a1e6-42416eae0e35",
+                  "parentUUID": "c8968536-0637-4f53-bcd4-7c593eec4514",
                   "isHook": false,
                   "skipped": false
                 },
@@ -506,7 +506,7 @@
                   "title": "Should return an error for unauthorized access when retrieving loan products",
                   "fullTitle": "Adjutor API - Embedded Loans and Payments Loan Products - Retrieve Loan Products Should return an error for unauthorized access when retrieving loan products",
                   "timedOut": null,
-                  "duration": 397,
+                  "duration": 362,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -515,28 +515,28 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/loans/products`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}` // Invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403 for Forbiden access\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "04a0337d-1b29-49e5-b14e-8ea79d36ed5a",
-                  "parentUUID": "4b3eb8a4-c328-4f47-bcfd-77dd3033a5e2",
+                  "uuid": "87ba0c8e-9001-40db-813a-acbeae32eb93",
+                  "parentUUID": "c8968536-0637-4f53-bcd4-7c593eec4514",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "04a0337d-1b29-49e5-b14e-8ea79d36ed5a"
+                "87ba0c8e-9001-40db-813a-acbeae32eb93"
               ],
               "failures": [
-                "e8fc3b73-f3e9-423f-8725-e9b4d5b47396"
+                "58969502-6f0d-47e4-a1e6-42416eae0e35"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 1227,
+              "duration": 1025,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "27ae5c13-d9ef-48a7-b303-d14bda2ed862",
+              "uuid": "730e3de4-821e-46c6-8db8-63f14806c0c8",
               "title": "Payments - Initialize Payment",
               "fullFile": "",
               "file": "",
@@ -547,7 +547,7 @@
                   "title": "Should successfully initialize a payment",
                   "fullTitle": "Adjutor API - Embedded Loans and Payments Payments - Initialize Payment Should successfully initialize a payment",
                   "timedOut": null,
-                  "duration": 2324,
+                  "duration": 986,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -556,8 +556,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'POST',\n  url: `/payments/initialize`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`,\n    'Content-Type': 'application/json'\n  },\n  body: paymentData\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'Successful');\n  expect(response.body).to.have.property('data');\n});",
                   "err": {},
-                  "uuid": "0d00c25f-1e69-4e3b-b412-5e22a471f5a1",
-                  "parentUUID": "27ae5c13-d9ef-48a7-b303-d14bda2ed862",
+                  "uuid": "d982afd0-818e-4570-bfae-3aebc052a193",
+                  "parentUUID": "730e3de4-821e-46c6-8db8-63f14806c0c8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -565,7 +565,7 @@
                   "title": "Should return an error for missing required fields when initializing payment",
                   "fullTitle": "Adjutor API - Embedded Loans and Payments Payments - Initialize Payment Should return an error for missing required fields when initializing payment",
                   "timedOut": null,
-                  "duration": 1435,
+                  "duration": 410,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -574,8 +574,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'POST',\n  url: `/payments/initialize`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`,\n    'Content-Type': 'application/json'\n  },\n  body: {\n    // Deliberately leaving out 'amount' to simulate a missing field\n    description: \"Payment for beans and egg\",\n    organization_id: \"37a749d808e46495a8da1e5352d03cae\",\n    callback_url: \"https://lendsqr.com\"\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 400 for bad request\n  expect(response.status).to.eq(400);\n  // Validate the error message for missing required fields\n  expect(response.body.message).to.contain('amount is required');\n});",
                   "err": {},
-                  "uuid": "f4c4d05d-918f-4939-8ebd-cf542ee0fdf7",
-                  "parentUUID": "27ae5c13-d9ef-48a7-b303-d14bda2ed862",
+                  "uuid": "d118805b-5df0-451e-a54c-eb73cff65597",
+                  "parentUUID": "730e3de4-821e-46c6-8db8-63f14806c0c8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -583,7 +583,7 @@
                   "title": "Should return an error for unauthorized access when initializing payment",
                   "fullTitle": "Adjutor API - Embedded Loans and Payments Payments - Initialize Payment Should return an error for unauthorized access when initializing payment",
                   "timedOut": null,
-                  "duration": 680,
+                  "duration": 367,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -592,22 +592,22 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'POST',\n  url: `/payments/initialize`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}`,\n    // Invalid API key\n    'Content-Type': 'application/json'\n  },\n  body: paymentData,\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 401 for Forbiden\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "4cb822aa-dce7-4696-aa59-80482c54f7f5",
-                  "parentUUID": "27ae5c13-d9ef-48a7-b303-d14bda2ed862",
+                  "uuid": "912bd960-0f3c-42a1-bd5d-d8a9923906b2",
+                  "parentUUID": "730e3de4-821e-46c6-8db8-63f14806c0c8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0d00c25f-1e69-4e3b-b412-5e22a471f5a1",
-                "f4c4d05d-918f-4939-8ebd-cf542ee0fdf7",
-                "4cb822aa-dce7-4696-aa59-80482c54f7f5"
+                "d982afd0-818e-4570-bfae-3aebc052a193",
+                "d118805b-5df0-451e-a54c-eb73cff65597",
+                "912bd960-0f3c-42a1-bd5d-d8a9923906b2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4439,
+              "duration": 1763,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -623,7 +623,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "7ea7281b-06ca-4d3b-8d64-b54622cc0b09",
+          "uuid": "f55f67b0-9196-488e-91fe-cb86f19452cf",
           "title": "Adjutor API - Data For Lenders",
           "fullFile": "",
           "file": "",
@@ -632,7 +632,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "9c135cf4-b2bb-4f7a-a00f-dabbc0ccda20",
+              "uuid": "79ad6657-4c2d-4199-85b4-7ea92bb3ca96",
               "title": "Options - Retrieve Data Options",
               "fullFile": "",
               "file": "",
@@ -643,17 +643,17 @@
                   "title": "Should successfully retrieve data options",
                   "fullTitle": "Adjutor API - Data For Lenders Options - Retrieve Data Options Should successfully retrieve data options",
                   "timedOut": null,
-                  "duration": 1730,
+                  "duration": 5182,
                   "state": "passed",
-                  "speed": "fast",
+                  "speed": "medium",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/data/options`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('success', true);\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.be.an('array');\n});",
                   "err": {},
-                  "uuid": "0c9a864a-9b35-430a-9087-1588fe0e64af",
-                  "parentUUID": "9c135cf4-b2bb-4f7a-a00f-dabbc0ccda20",
+                  "uuid": "1db3901c-8002-49e4-bc33-33c9ea10cf71",
+                  "parentUUID": "79ad6657-4c2d-4199-85b4-7ea92bb3ca96",
                   "isHook": false,
                   "skipped": false
                 },
@@ -661,7 +661,7 @@
                   "title": "Should return an error for unauthorized access when retrieving data options",
                   "fullTitle": "Adjutor API - Data For Lenders Options - Retrieve Data Options Should return an error for unauthorized access when retrieving data options",
                   "timedOut": null,
-                  "duration": 729,
+                  "duration": 381,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -670,27 +670,27 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/data/options`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}` // Invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403 for Forbiden\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "dbb971c8-ba0e-432f-a851-0d55c831a2ee",
-                  "parentUUID": "9c135cf4-b2bb-4f7a-a00f-dabbc0ccda20",
+                  "uuid": "bb3330df-7367-46d9-b121-8bda64dffa5b",
+                  "parentUUID": "79ad6657-4c2d-4199-85b4-7ea92bb3ca96",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0c9a864a-9b35-430a-9087-1588fe0e64af",
-                "dbb971c8-ba0e-432f-a851-0d55c831a2ee"
+                "1db3901c-8002-49e4-bc33-33c9ea10cf71",
+                "bb3330df-7367-46d9-b121-8bda64dffa5b"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2459,
+              "duration": 5563,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "0a5c79a8-f0d9-4e0d-b0fc-8c594524b0b6",
+              "uuid": "34ca45c2-0803-4d54-87dc-3266fb8c492e",
               "title": "Users - Retrieve Users",
               "fullFile": "",
               "file": "",
@@ -701,7 +701,7 @@
                   "title": "Should successfully retrieve users",
                   "fullTitle": "Adjutor API - Data For Lenders Users - Retrieve Users Should successfully retrieve users",
                   "timedOut": null,
-                  "duration": 630,
+                  "duration": 627,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -710,8 +710,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/data/users`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('success', true);\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.be.an('array');\n});",
                   "err": {},
-                  "uuid": "9ed2b81c-45c3-48b9-9374-d0b1600e863a",
-                  "parentUUID": "0a5c79a8-f0d9-4e0d-b0fc-8c594524b0b6",
+                  "uuid": "9b594546-2d97-400f-960f-d34f94077249",
+                  "parentUUID": "34ca45c2-0803-4d54-87dc-3266fb8c492e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -719,7 +719,7 @@
                   "title": "Should return an error for unauthorized access when retrieving users",
                   "fullTitle": "Adjutor API - Data For Lenders Users - Retrieve Users Should return an error for unauthorized access when retrieving users",
                   "timedOut": null,
-                  "duration": 362,
+                  "duration": 408,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -728,21 +728,21 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/data/users`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}` // Invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403 for Forbiden\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "9ce74b5a-7d63-4739-aa0e-80de949ef4a2",
-                  "parentUUID": "0a5c79a8-f0d9-4e0d-b0fc-8c594524b0b6",
+                  "uuid": "09f985ee-289b-4fa8-9b97-a93a170e9c19",
+                  "parentUUID": "34ca45c2-0803-4d54-87dc-3266fb8c492e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9ed2b81c-45c3-48b9-9374-d0b1600e863a",
-                "9ce74b5a-7d63-4739-aa0e-80de949ef4a2"
+                "9b594546-2d97-400f-960f-d34f94077249",
+                "09f985ee-289b-4fa8-9b97-a93a170e9c19"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 992,
+              "duration": 1035,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -758,7 +758,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "01eb40e5-2c88-41c6-b046-472ea7fd2738",
+          "uuid": "1f999d8a-b9e6-441a-88af-c9e16f940d51",
           "title": "Adjutor API – Operational Services",
           "fullFile": "",
           "file": "",
@@ -767,7 +767,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "e2f817df-753b-4dc8-b9fa-0ea14aa85835",
+              "uuid": "7dfdc84e-f79f-4f47-9f49-50dbe660d80e",
               "title": "Get Adjutor Services Pricing",
               "fullFile": "",
               "file": "",
@@ -778,7 +778,7 @@
                   "title": "Should successfully retrieve Adjutor services pricing",
                   "fullTitle": "Adjutor API – Operational Services Get Adjutor Services Pricing Should successfully retrieve Adjutor services pricing",
                   "timedOut": null,
-                  "duration": 9531,
+                  "duration": 5622,
                   "state": "passed",
                   "speed": "medium",
                   "pass": true,
@@ -787,8 +787,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/profile/pricing`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'Successful');\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.be.an('array');\n});",
                   "err": {},
-                  "uuid": "24acad4c-a567-421a-a55a-e8e10defb053",
-                  "parentUUID": "e2f817df-753b-4dc8-b9fa-0ea14aa85835",
+                  "uuid": "764a0a5f-86b9-4a02-aa93-c002d230364d",
+                  "parentUUID": "7dfdc84e-f79f-4f47-9f49-50dbe660d80e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -796,7 +796,7 @@
                   "title": "Should return an error for unauthorized access when retrieving pricing",
                   "fullTitle": "Adjutor API – Operational Services Get Adjutor Services Pricing Should return an error for unauthorized access when retrieving pricing",
                   "timedOut": null,
-                  "duration": 556,
+                  "duration": 396,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -805,27 +805,27 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/profile/pricing`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}` // Invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403 for Forbiden\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "b01fec65-36e3-4654-a8ba-81eec76d4dcd",
-                  "parentUUID": "e2f817df-753b-4dc8-b9fa-0ea14aa85835",
+                  "uuid": "72192a0a-ad7c-4c65-a301-696caed11bc9",
+                  "parentUUID": "7dfdc84e-f79f-4f47-9f49-50dbe660d80e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "24acad4c-a567-421a-a55a-e8e10defb053",
-                "b01fec65-36e3-4654-a8ba-81eec76d4dcd"
+                "764a0a5f-86b9-4a02-aa93-c002d230364d",
+                "72192a0a-ad7c-4c65-a301-696caed11bc9"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 10087,
+              "duration": 6018,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "50a2eda2-6133-4796-b0f7-a6427a3b4349",
+              "uuid": "42cc89f7-316f-41ae-acb4-cab2a78d2115",
               "title": "Get wallet",
               "fullFile": "",
               "file": "",
@@ -836,7 +836,7 @@
                   "title": "Should successfully retrieve wallet",
                   "fullTitle": "Adjutor API – Operational Services Get wallet Should successfully retrieve wallet",
                   "timedOut": null,
-                  "duration": 481,
+                  "duration": 448,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -845,8 +845,8 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/profile/wallet`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'Successful');\n  expect(response.body).to.have.property('data');\n  expect(response.body.data.balance).to.eq(10);\n});",
                   "err": {},
-                  "uuid": "6b135419-b96c-4d85-a372-19ac4aaaee23",
-                  "parentUUID": "50a2eda2-6133-4796-b0f7-a6427a3b4349",
+                  "uuid": "ed8bea8c-ae4b-46a3-a6f5-8844a99c7571",
+                  "parentUUID": "42cc89f7-316f-41ae-acb4-cab2a78d2115",
                   "isHook": false,
                   "skipped": false
                 },
@@ -854,7 +854,7 @@
                   "title": "Should return an error for unauthorized access when retrieving wallet",
                   "fullTitle": "Adjutor API – Operational Services Get wallet Should return an error for unauthorized access when retrieving wallet",
                   "timedOut": null,
-                  "duration": 378,
+                  "duration": 338,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -863,21 +863,21 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/profile/wallet`,\n  headers: {\n    Authorization: `Bearer ${invalidApiKey}` // Invalid API key\n  },\n  failOnStatusCode: false // Allow Cypress to handle non-2xx status codes\n}).then(response => {\n  // Validate the HTTP status code is 403 for Forbiden\n  expect(response.status).to.eq(403);\n  // Validate the error message for unauthorized access\n  expect(response.body.message).to.contain(`We couldn't verify your access`);\n});",
                   "err": {},
-                  "uuid": "cc43f3b0-fb4d-45ef-a6ca-b58b31adfd24",
-                  "parentUUID": "50a2eda2-6133-4796-b0f7-a6427a3b4349",
+                  "uuid": "4153194e-825f-472a-87f7-190acdc4a3b7",
+                  "parentUUID": "42cc89f7-316f-41ae-acb4-cab2a78d2115",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "6b135419-b96c-4d85-a372-19ac4aaaee23",
-                "cc43f3b0-fb4d-45ef-a6ca-b58b31adfd24"
+                "ed8bea8c-ae4b-46a3-a6f5-8844a99c7571",
+                "4153194e-825f-472a-87f7-190acdc4a3b7"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 859,
+              "duration": 786,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -893,7 +893,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "cf41301c-ca97-403e-ab93-d476579d821d",
+          "uuid": "be05e0d7-28ac-4ea0-a8a3-fc5adcad4315",
           "title": "Adjutor API - Direct Debit",
           "fullFile": "",
           "file": "",
@@ -902,7 +902,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "dc595e64-2ef7-48fc-8855-b2ad1c436c1e",
+              "uuid": "df418ad8-d6c7-4276-9222-8f10b702066a",
               "title": "Get All Transactions",
               "fullFile": "",
               "file": "",
@@ -913,7 +913,7 @@
                   "title": "Should successfully retrieve all transactions",
                   "fullTitle": "Adjutor API - Direct Debit Get All Transactions Should successfully retrieve all transactions",
                   "timedOut": null,
-                  "duration": 929,
+                  "duration": 624,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -922,12 +922,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/direct-debit/transactions?limit=10&page=1`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'success');\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.be.an('object');\n  expect(response.body.data.data).to.be.an('array');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:00:10 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"5da78329-e75e-4951-bbf4-572a3c97f611\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:00:10 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828c73b3b7745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:00:10 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"5da78329-e75e-4951-bbf4-572a3c97f611\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:00:10 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828c73b3b7745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:571:9)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:43 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"557d9b9c-91a5-4b44-8e4d-55575def70a3\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:43 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584e384bfd96f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:43 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"557d9b9c-91a5-4b44-8e4d-55575def70a3\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:43 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584e384bfd96f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:571:9)",
                     "diff": null
                   },
-                  "uuid": "331261de-afab-4cd8-a559-247318e5cc09",
-                  "parentUUID": "dc595e64-2ef7-48fc-8855-b2ad1c436c1e",
+                  "uuid": "692f79a5-7b39-42b7-89e2-c0b733fbabe5",
+                  "parentUUID": "df418ad8-d6c7-4276-9222-8f10b702066a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -935,7 +935,7 @@
                   "title": "Should return an error for unauthorized access when retrieving transactions",
                   "fullTitle": "Adjutor API - Direct Debit Get All Transactions Should return an error for unauthorized access when retrieving transactions",
                   "timedOut": null,
-                  "duration": 1106,
+                  "duration": 546,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -948,8 +948,8 @@
                     "estack": "AssertionError: expected 403 to equal 401\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:601:35)",
                     "diff": "- 403\n+ 401\n"
                   },
-                  "uuid": "32d667c3-5928-45cd-88e7-32d9f630d5e6",
-                  "parentUUID": "dc595e64-2ef7-48fc-8855-b2ad1c436c1e",
+                  "uuid": "2c3a9d0c-ca77-4a15-91d4-666e8b73f97b",
+                  "parentUUID": "df418ad8-d6c7-4276-9222-8f10b702066a",
                   "isHook": false,
                   "skipped": false
                 }
@@ -957,18 +957,18 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "331261de-afab-4cd8-a559-247318e5cc09",
-                "32d667c3-5928-45cd-88e7-32d9f630d5e6"
+                "692f79a5-7b39-42b7-89e2-c0b733fbabe5",
+                "2c3a9d0c-ca77-4a15-91d4-666e8b73f97b"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2035,
+              "duration": 1170,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "a09c5031-d3c4-4a0c-b371-a8bd2cc44977",
+              "uuid": "01496074-a1ab-4028-90c0-761d653daf06",
               "title": "Get Transactions Statistics",
               "fullFile": "",
               "file": "",
@@ -979,7 +979,7 @@
                   "title": "Should successfully retrieve transaction statistics",
                   "fullTitle": "Adjutor API - Direct Debit Get Transactions Statistics Should successfully retrieve transaction statistics",
                   "timedOut": null,
-                  "duration": 854,
+                  "duration": 584,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -988,12 +988,12 @@
                   "context": null,
                   "code": "cy.request({\n  method: 'GET',\n  url: `/direct-debit/transactions/stats`,\n  headers: {\n    Authorization: `Bearer ${apiKey}`\n  }\n}).then(response => {\n  // Validate the HTTP status code is 200\n  expect(response.status).to.eq(200);\n  // Validate the response body structure\n  expect(response.body).to.have.property('status', 'success');\n  expect(response.body).to.have.property('message', 'success');\n  expect(response.body).to.have.property('data');\n  expect(response.body.data).to.have.property('transactions');\n  expect(response.body.data.transactions).to.be.an('array');\n});",
                   "err": {
-                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:00:12 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"8053fbdc-be23-4490-af25-d67216e8971b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:00:12 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828d5898d7745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request",
-                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:00:12 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"8053fbdc-be23-4490-af25-d67216e8971b\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:00:12 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d5828d5898d7745-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:613:11)",
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:45 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e50c4d87-a40a-4eac-9e4f-1df20e12bf10\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:45 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584e40af4a96f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://adjutor.lendsqr.com/v2/direct-debit/transactions/stats\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer sk_live_fLiOPuLHh0aVKd6Cueut04vswmjmWcoDCPzBHXre\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.14.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"date\": \"Sun, 20 Oct 2024 10:25:45 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"x-request-id\": \"e50c4d87-a40a-4eac-9e4f-1df20e12bf10\",\n  \"last-modified\": \"Sun, 20 Oct 2024 10:25:45 GMT\",\n  \"etag\": \"W/\\\"61-Ug40QPgVyDT+gJD0gQwDXsrHyvE\\\"\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"8d584e40af4a96f9-AMS\",\n  \"content-encoding\": \"gzip\"\n}\nBody: {\n  \"status\": \"error\",\n  \"message\": \"Access denied. You do not have permission to access this resource.\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:133224:72)\n    at tryCatcher (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://adjutor.lendsqr.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:613:11)",
                     "diff": null
                   },
-                  "uuid": "89a56ad6-f6c9-48e4-bbcf-fa3dbbe72983",
-                  "parentUUID": "a09c5031-d3c4-4a0c-b371-a8bd2cc44977",
+                  "uuid": "f2f1f0fb-12e2-4767-ace2-1ac5ed8ee682",
+                  "parentUUID": "01496074-a1ab-4028-90c0-761d653daf06",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1001,7 +1001,7 @@
                   "title": "Should return an error for unauthorized access with an invalid API key",
                   "fullTitle": "Adjutor API - Direct Debit Get Transactions Statistics Should return an error for unauthorized access with an invalid API key",
                   "timedOut": null,
-                  "duration": 609,
+                  "duration": 599,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -1014,8 +1014,8 @@
                     "estack": "AssertionError: expected 403 to equal 401\n    at Context.eval (webpack://adjutor-api-test/./cypress/e2e/adjutorAPITest.cy.js:644:37)",
                     "diff": "- 403\n+ 401\n"
                   },
-                  "uuid": "760afd43-76d1-43bc-8935-85f10f10aaf3",
-                  "parentUUID": "a09c5031-d3c4-4a0c-b371-a8bd2cc44977",
+                  "uuid": "6ab4c87b-3e08-4822-8373-a11ee94ae1cd",
+                  "parentUUID": "01496074-a1ab-4028-90c0-761d653daf06",
                   "isHook": false,
                   "skipped": false
                 }
@@ -1023,12 +1023,12 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "89a56ad6-f6c9-48e4-bbcf-fa3dbbe72983",
-                "760afd43-76d1-43bc-8935-85f10f10aaf3"
+                "f2f1f0fb-12e2-4767-ace2-1ac5ed8ee682",
+                "6ab4c87b-3e08-4822-8373-a11ee94ae1cd"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 1463,
+              "duration": 1183,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
