@@ -23,7 +23,8 @@ This project focuses on developing automated API tests using Cypress.io. For add
    ```bash
    npm install
    npx cypress install
----  ```
+   ```
+---   
 ## Running the Tests with Headed Mode
 1. Open the Cypress dashboard with following command:
    ```bash
@@ -213,72 +214,72 @@ This automation assessment focuses on validating various API operations includin
 ### Adjutor API – Validation
 
 #### Initialize BVN Consent:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 #### Complete Consent and Get BVN Details:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 ### Adjutor API - Credit Bureaus
 
 #### CRC Credit Bureau:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 #### FirstCentral Credit Bureau:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 ### Adjutor API - Decision
 
 #### Fetch All Decision Models:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 #### Fetch Decision Model Details:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 ### Adjutor API - Embedded Loans and Payments
 
 #### Loan Products - Retrieve Loan Products:
--**Positive Case**: FAILED
--**Negative Case**: PASSED
+##### Positive Case: FAILED
+##### Negative Case: PASSED
 
 #### Payments - Initialize Payment:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 ### Adjutor API - Data For Lenders
 
 #### Retrieve Data Options:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 #### Retrieve Users:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 ### Adjutor API – Operational Services
 
 #### Get Adjutor Services Pricing:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 #### Get Wallet:
--**Positive Case**: PASSED
--**Negative Case**: PASSED
+##### Positive Case: PASSED
+##### Negative Case: PASSED
 
 ### Adjutor API - Direct Debit
 
 #### Get All Transactions:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 #### Get Transactions Statistics:
--**Positive Case**: FAILED
--**Negative Case**: FAILED
+##### Positive Case: FAILED
+##### Negative Case: FAILED
 
 ---
 ## Best Practices
