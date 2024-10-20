@@ -139,8 +139,11 @@ This automation assessment focuses on validating various API operations includin
   - Validates the response message.
 - **Negative Cases**: 
   - Sends a POST request with missing required fields.
-  - Confirms the response status is 400.
-  - Validates the error message for the missing field.
+   - Confirms the response status is 400.
+   - Validates the error message for the missing field.
+  - Sends a POST request with an invalid API key.
+   - Confirms the response status is 403.
+   - Validates the error message for unauthorized access.
 
 ### Adjutor API - Data For Lenders
 
@@ -249,6 +252,7 @@ This automation assessment focuses on validating various API operations includin
 
 #### Payments - Initialize Payment:
 ##### Positive Case: PASSED
+##### Negative Case: PASSED
 ##### Negative Case: PASSED
 
 ### Adjutor API - Data For Lenders
