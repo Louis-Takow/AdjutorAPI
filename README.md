@@ -22,26 +22,28 @@ This project focuses on developing automated API tests using Cypress.io. For add
    ```bash
    npm install
    npx cypress install
-   npx cypress open
    ```
+## Running the Tests with Headed Mode
+1. Open the Cypress dashboard with following command:
+  ```bash
+   npx cypress open
+  ```
+2. On the Cypress dashboard, you will be greeted with options for E2E Testing and Component Testing. Since we are focusing on API automation, select E2E Testing.
+3. The default browser will be Chrome. It is not necessary to choose a different browser; simply click on Start E2E Testing in Chrome.
+4. A new browser window will open with the test dashboard. Locate and click on the `adjutorAPITest.cy.js` file to run the tests.
+5. You can monitor the execution results by clicking on the steps listed on the left side of the dashboard to check which tests passed or failed.
 
-4. Run test with headless mode and generate Mochawesome report using the following command:
+## Running the Tests with Headless Mode
+1. Run test with headless mode and generate Mochawesome report using the following command:
 
    ```bash
    npm run cypress:run
    ```
-5. Open Mochawesome report using the following command:
+2. Open Mochawesome report using the following command:
 
-  ```bash
-  start cypress\\reports\\mochawesome.html
-  ```
-
-## Running the Tests with Headed Mode
-1. On the Cypress dashboard, you will be greeted with options for E2E Testing and Component Testing. Since we are focusing on API automation, select E2E Testing.
-2. The default browser will be Chrome. It is not necessary to choose a different browser; simply click on Start E2E Testing in Chrome.
-3. A new browser window will open with the test dashboard. Locate and click on the `adjutorAPITest.cy.js` file to run the tests.
-4. You can monitor the execution results by clicking on the steps listed on the left side of the dashboard to check which tests passed or failed.
-
+   ```bash
+   start cypress\\reports\\mochawesome.html
+   ```
 ## Test Details
 ### Overview
 This automation assessment focuses on validating various API operations including BVN consent initialization, credit bureau retrieval, decision models, loan products, and payment initialization.
