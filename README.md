@@ -1,6 +1,3 @@
-Here’s a README.md file that combines both scripts you provided, following the format you requested:
-
-```markdown
 # API Automation Adjutor
 
 This project focuses on developing automated API tests using Cypress.io. For additional details about Cypress, visit [Cypress.io](https://www.cypress.io).
